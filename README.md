@@ -13,7 +13,7 @@ HTTP Communication: API services to interact with the backend.
 ### Backend (.NET Microservices)
 * Task Microservice: CRUD operations for tasks.
 * User Microservice: CRUD operations for users.
-** Swagger Integration: API testing and documentation.
+* Swagger Integration: API testing and documentation.
 
 #### Technologies Used
 Frontend: Angular, TypeScript, NgRx (Store, Effects, Reducers, Selectors)
