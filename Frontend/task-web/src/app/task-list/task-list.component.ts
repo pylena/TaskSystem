@@ -10,16 +10,17 @@ import { TaskService } from '../task.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TaskFormComponent } from '../task-form/task-form.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [CommonModule,TaskFormComponent,RouterModule,FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  error$: Observable<string | null>;
+ error$: Observable<string | null>;
   tasks$: Observable<Task[]>; // Observable for tasks
   filteredTasks$: Observable<Task[]>; // to filtere & sorted tasks
 
