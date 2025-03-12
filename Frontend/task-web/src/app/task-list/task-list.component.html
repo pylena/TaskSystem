@@ -1,0 +1,31 @@
+<h1>Task List</h1>
+
+<div class="text-end mb-3">
+  <a routerLink="/addTask">Add New Task</a>
+</div>
+
+<!-- Display tasks only if available -->
+<div *ngIf="filteredTasks$ | async as tasks">
+  <div *ngIf="tasks.length > 0; else noTasks" class="list-group">
+    <div *ngFor="let task of tasks" class="list-group-item">
+      <div>
+        <h5>{{ task.title }}</h5>
+        <p>{{ task.description }}</p>
+        <small class="text-muted">
+          State: {{ task.completed ? 'Completed' : 'Pending' }}
+        </small>
+      </div>
+      <div>
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Message when there are no tasks -->
+<ng-template #noTasks>
+  <div class="alert alert-info">
+    No tasks to view. Create one now.
+  </div>
+</ng-template>
